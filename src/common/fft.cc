@@ -6,13 +6,13 @@
 namespace descimag {
 namespace fft {
 int32 FFT(const uint8 & dir, const uint16 & siz, 
-          descimag::data::Complex in_data, 
+          descimag::data::Complex * in_data, 
           descimag::data::Complex * out_data) {
    // int32 n,i,i1,j,k,i2,l,l1,l2;
   //  TODO : verify if m is the siz!
   
   int32 m = siz; 
-  int32 i1, k, i2, l, l1, l2;
+  int32 i1, k, i2, l1, l2;
   flt_t c1,c2,tx,ty,t1,t2,u1,u2,z;
 
   flt_t * x = (flt_t *)malloc(sizeof(flt_t) * siz);
@@ -83,7 +83,9 @@ int32 FFT(const uint8 & dir, const uint16 & siz,
          y[i] /= n;
       }
    }
-   // TODO : copy x y to complex out 
+   
+   cpy_flt_complex(x, y, out_data, siz);
+    
    
    return 0;
 }  //  function fft
@@ -97,6 +99,7 @@ int32 cpy_complex_flt(descimag::data::Complex * c_in, flt_t * flt_out_x,
   }
   return 0;
 }  //  function cpy_flt_complex
+
 int32 cpy_flt_complex(flt_t * flt_in_x, flt_t * flt_in_y, 
                       descimag::data::Complex * c_out, const int32 & siz) {
   
