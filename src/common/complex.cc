@@ -8,6 +8,10 @@ namespace data {
     imag_ = imag;
   }
 
+  Complex::Complex() {
+    real_ = 0.0f;
+    imag_ = 0.0f;
+  }
   flt_t Complex::get_real() const {
     return real_;
   }
