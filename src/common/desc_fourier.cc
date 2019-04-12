@@ -5,7 +5,7 @@
 
 namespace descimag {
 namespace descfour {
-flt_t * desc_fourier1(uint8 ** pImage, const uint16 & width, 
+/*flt_t * desc_fourier1(uint8 ** pImage, const uint16 & width, 
                       const uint16 & heigth) {
 	flt_t * coef = nullptr ;
 
@@ -34,7 +34,7 @@ flt_t * desc_fourier1(uint8 ** pImage, const uint16 & width,
 		} //c
 	} // l
 
-	/* Transform the rows */
+	//  Transform the rows 
 	real = (double *)malloc(LargIm * sizeof(double));
 	imag = (double *)malloc(LargIm * sizeof(double));
 
@@ -65,7 +65,7 @@ flt_t * desc_fourier1(uint8 ** pImage, const uint16 & width,
 
   // Todo : FFT sur les colonnes puis recopie dans le buffer data
 
-	/* Transform the columns */
+	//  Transform the columns
 	for (r=0;r<3;r++)
 	{	
 		for (c=0;c<LargIm;c++)
@@ -182,6 +182,6 @@ flt_t * desc_fourier1(uint8 ** pImage, const uint16 & width,
 	return coef;
 
 
-}
+}*/
 }  // namespace descfour
 }  // namespace descimag

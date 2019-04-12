@@ -27,5 +27,11 @@ namespace data {
   void Complex::set_imag(const flt_t & imag) {
     imag_ = imag;
   }
+  Complex & Complex::operator=(const Complex & val) {
+  this->set_real(val.get_real());
+  this->set_imag(val.get_imag());
+
+  return *this;
+  }
 }  //  namespace data
 }  //  namespace descimag
