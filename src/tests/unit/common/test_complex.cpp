@@ -20,3 +20,10 @@ TEST(Copy_real_2_img_3, OperatorEqual) {
     GTEST_ASSERT_EQ(a.get_real(), 2);
     GTEST_ASSERT_EQ(a.get_imag(), 3);
 }
+TEST(Construction_real_2_img_3, Constructor_a_b) {
+   	flt_t x = 2;
+    flt_t y = 3;
+    descimag::data::Complex b(x, y);
+    GTEST_ASSERT_EQ(b.get_real(), 2);
+    GTEST_ASSERT_EQ(b.get_imag(), 3);
+}
