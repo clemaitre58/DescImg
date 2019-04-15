@@ -17,7 +17,7 @@ class CsvReaderFFT{
   std::vector<double> val_input_;
   std::vector<descimag::data::Complex> val_ouput_fft_;
   int nb_col_csv_;
-  void parse_line_(std::string line);
+  void parse_line_(const std::string &);
  public:
   CsvReaderFFT(std::string);
   descimag::data::Complex get_val_fft_vector(int index) const; 

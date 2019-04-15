@@ -9,6 +9,7 @@ CsvReaderFFT::CsvReaderFFT(std::string f) {
   file_name_ = f;
   nb_col_csv_ = 2;
   std::ifstream if_file(file_name_);
+  // TODO: traiter la premiere ligne particulèrement
   if (if_file.is_open()) {
     std::string val_line;
     while (if_file.good()) {
@@ -22,7 +23,7 @@ CsvReaderFFT::CsvReaderFFT(std::string f) {
 descimag::data::Complex CsvReaderFFT::get_val_fft_vector(int index) const {
   return val_ouput_fft_[index];
 }
-void CsvReaderFFT::parse_line_(std::string) {
+void CsvReaderFFT::parse_line_(const std::string & l) {
 
 }
 }
