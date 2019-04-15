@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 
 #include <cmath>
+#include <vector>
 
 #include <common/complex.hpp>
 #include <common/fft.hpp>
@@ -14,19 +15,15 @@
 // * The test case name
 // * The test name
 
-/*TEST(Copy_real_2_img_3, OperatorEqual) {
-   	flt_t x = 2;
-    flt_t y = 3;
-    descimag::data::Complex a;
-    descimag::data::Complex b(x, y);
-    a = b;
-    GTEST_ASSERT_EQ(a.get_real(), 2);
-    GTEST_ASSERT_EQ(a.get_imag(), 3);
+TEST(Test_abs_error_each_elt, OperatorResFFTOK) {
+  descimag::data::Complex * in;
+  descimag::data::Complex * out;
+  descimag::csv_reader_fft::CsvReaderFFT a("../data/data_fft.csv");
+  std::vector<double> data_in_d = a.get_val_input();
+  in = descimag::data::double_vector_to_array_complex(data_in_d);
+  // TODO: faire une fonction membre qui retourne la taille de ce qui lu
+  int32 rtn = descimag::fft::FFT(1, 1024, in, out);
+      
+  // GTEST_ASSERT_EQ(a.get_real(), 2);
+  // GTEST_ASSERT_EQ(a.get_imag(), 3);
 }
-TEST(Construction_real_2_img_3, Constructor_a_b) {
-   	flt_t x = 2;
-    flt_t y = 3;
-    descimag::data::Complex b(x, y);
-    GTEST_ASSERT_EQ(b.get_real(), 2);
-    GTEST_ASSERT_EQ(b.get_imag(), 3);
-}*/

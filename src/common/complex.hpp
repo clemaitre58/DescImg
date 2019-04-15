@@ -1,6 +1,8 @@
 //  copyright Cedric Lemaitre 2018
 #ifndef _SRC_COMMON_COMPLEX_H_
 #define _SRC_COMMON_COMPLEX_H_
+
+#include <vector>
 #include "type_def.hpp"
 
 namespace descimag {
@@ -18,6 +20,11 @@ class Complex {
   void set_imag(const flt_t &);
   Complex & operator=(const Complex &);
 };  // Class complex
+
+  descimag::data::Complex* 
+  double_vector_to_array_double(const std::vector<descimag::data::Complex> &);
+  descimag::data::Complex* 
+  double_vector_to_array_complex(const std::vector<double> &);
 }  // namespace data
 }  // namespace descimag
 #endif  //  _SRC_COMMON_COMPLEX_H_

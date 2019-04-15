@@ -33,5 +33,31 @@ namespace data {
 
   return *this;
   }
+  descimag::data::Complex* 
+      double_vector_to_array_double(
+          const std::vector<descimag::data::Complex> & v) {
+    int size_v = v.size();
+    descimag::data::Complex * array_d;
+   array_d = new descimag::data::Complex[size_v];
+
+   for (int i=0; i<size_v; i++){
+     array_d[i] = v[i];
+   }
+   return array_d;
+
+  }
+
+  descimag::data::Complex * 
+      double_vector_to_array_complex(
+          const std::vector<double> & v) {
+        int size_v = v.size();
+        descimag::data::Complex * array_c = 
+            new descimag::data::Complex[size_v];
+        for (int i=0; i<size_v; i++) {
+          array_c[i].set_real(v[i]);
+          array_c[i].set_imag(0.0f);
+        }
+        return array_c;
+      }
 }  //  namespace data
 }  //  namespace descimag

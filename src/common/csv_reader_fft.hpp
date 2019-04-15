@@ -24,7 +24,8 @@ class CsvReaderFFT{
   CsvReaderFFT(std::string);
   descimag::data::Complex get_val_fft_vector(int index) const;
 double get_val_input_vector(int index) const;
-  int get_number_row() const; 
+  int get_number_row() const;
+  std::vector<double> get_val_input() const; 
 
 
 };

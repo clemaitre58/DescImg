@@ -64,5 +64,9 @@ void CsvReaderFFT::parse_line_(const std::string & l) {
 int CsvReaderFFT::get_number_row() const {
     return val_input_.size();
 }
+
+  std::vector<double> CsvReaderFFT::get_val_input() const{
+    return val_input_;
+  } 
 }
 }
