@@ -19,7 +19,7 @@ namespace fft {
 //   * descimag::data::Complex * in_data : input data for image place 
 //   imaginary part to 0
 //   * descimag::data::Complex * out_data : output data after FFT compute
-int32 FFT(uint8, uint16, descimag::data::Complex *,
+int32 FFT(const uint8 &, const uint16 &, descimag::data::Complex *,
           descimag::data::Complex *);
 
 ///  function cpy_conplex_flt
