@@ -1,9 +1,12 @@
-// "Copyright [2018] Cedric Lemaitre"
+// "Copyright 2019 Cedric Lemaitre"
 #include <gtest/gtest.h>
 
 #include <cmath>
 
 #include <common/complex.hpp>
+#include <common/fft.hpp>
+#include <common/csv_reader_fft.hpp>
+
 // Include the gtest library
 
 // Create our own test to check the different function of our class

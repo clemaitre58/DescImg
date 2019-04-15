@@ -12,8 +12,7 @@ CsvReaderFFT::CsvReaderFFT(std::string f) {
   int count_line = 0;
   if (if_file.is_open()) {
     std::string val_line;
-    while (if_file.good()) {
-      getline(if_file, val_line);
+    while (getline(if_file, val_line)) {
       if (count_line != 0) {
         parse_line_(val_line);
       }
@@ -23,8 +22,13 @@ CsvReaderFFT::CsvReaderFFT(std::string f) {
     std::cout << "Can't open file";
   }  // if open file
 }
+
 descimag::data::Complex CsvReaderFFT::get_val_fft_vector(int index) const {
   return val_ouput_fft_[index];
+}
+
+double CsvReaderFFT::get_val_input_vector(int index) const {
+  return val_input_[index];
 }
 void CsvReaderFFT::parse_line_(const std::string & l) {
   std::stringstream line_steam(l);
@@ -36,14 +40,17 @@ void CsvReaderFFT::parse_line_(const std::string & l) {
   while (std::getline(line_steam, cell, ',')) {
          switch (count) {
          case 0:
-         d_input = atof(cell.c_str());
          count ++;
          break;
          case 1:
-         d_output_real = atof(cell.c_str());
+         d_input = atof(cell.c_str());
          count ++;
          break;
          case 2:
+         d_output_real = atof(cell.c_str());
+         count ++;
+         break;
+         case 3:
          d_output_img = atof(cell.c_str());
          count ++;
          break;
