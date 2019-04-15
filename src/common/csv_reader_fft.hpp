@@ -6,6 +6,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
+
 #include "type_def.hpp"
 #include "complex.hpp"
 
@@ -20,7 +22,8 @@ class CsvReaderFFT{
   void parse_line_(const std::string &);
  public:
   CsvReaderFFT(std::string);
-  descimag::data::Complex get_val_fft_vector(int index) const; 
+  descimag::data::Complex get_val_fft_vector(int index) const;
+  int get_number_row() const; 
 
 
 };
