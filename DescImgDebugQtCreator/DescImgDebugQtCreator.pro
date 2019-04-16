@@ -15,4 +15,8 @@ SOURCES += \
     ../src/tests/unit/common/test_fft.cpp \
     ../src/tests/tests_all.cpp
 
-INCLUDEPATH += ../src/
+INCLUDEPATH += \
+    ../src/ \
+    /usr/lib/
+
+LIBS += -lgtest -L/usr/lib/libgtest.a

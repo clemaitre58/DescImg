@@ -15,9 +15,11 @@ CsvReaderFFT::CsvReaderFFT(std::string f) {
     while (getline(if_file, val_line)) {
       if (count_line != 0) {
         parse_line_(val_line);
+
       }
       count_line ++;
-    }  //  while if_file.good()
+    }  //  while
+    nb_line_ = count_line - 1;
   } else {
     std::cout << "Can't open file";
   }  // if open file
@@ -62,11 +64,18 @@ void CsvReaderFFT::parse_line_(const std::string & l) {
   val_ouput_fft_.push_back(descimag::data::Complex(d_output_real, d_output_img));
 }//  end read CSV
 int CsvReaderFFT::get_number_row() const {
-    return val_input_.size();
+    return nb_line_;
 }
 
   std::vector<double> CsvReaderFFT::get_val_input() const{
     return val_input_;
   } 
+  int CsvReaderFFT::get_size_val_input() const {
+    return val_input_.size();
+  }
+
+  int CsvReaderFFT::get_size_val_output_fft() const {
+    return val_ouput_fft_.size();
+  }
 }
 }

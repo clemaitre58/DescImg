@@ -21,8 +21,8 @@ TEST(Test_abs_error_each_elt, OperatorResFFTOK) {
   descimag::csv_reader_fft::CsvReaderFFT a("../data/data_fft.csv");
   std::vector<double> data_in_d = a.get_val_input();
   in = descimag::data::double_vector_to_array_complex(data_in_d);
-  // TODO: faire une fonction membre qui retourne la taille de ce qui lu
-  //int32 rtn = descimag::fft::FFT(1, 1024, in, out);
+  out = new descimag::data::Complex[a.get_size_val_input()];
+  int32 rtn = descimag::fft::FFT(1, 1024, in, out);
       
   // GTEST_ASSERT_EQ(a.get_real(), 2);
   // GTEST_ASSERT_EQ(a.get_imag(), 3);

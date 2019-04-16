@@ -19,13 +19,16 @@ class CsvReaderFFT{
   std::vector<double> val_input_;
   std::vector<descimag::data::Complex> val_ouput_fft_;
   int nb_col_csv_;
+  int nb_line_;
   void parse_line_(const std::string &);
  public:
   CsvReaderFFT(std::string);
   descimag::data::Complex get_val_fft_vector(int index) const;
-double get_val_input_vector(int index) const;
+  double get_val_input_vector(int index) const;
   int get_number_row() const;
-  std::vector<double> get_val_input() const; 
+  std::vector<double> get_val_input() const;
+  int get_size_val_input() const;
+  int get_size_val_output_fft() const;  
 
 
 };
