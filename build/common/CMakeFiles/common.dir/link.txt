@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcommon.a  CMakeFiles/common.dir/complex.cc.o CMakeFiles/common.dir/csv_reader_fft.cc.o CMakeFiles/common.dir/desc_fourier.cc.o CMakeFiles/common.dir/fft.cc.o
+/usr/bin/ranlib libcommon.a

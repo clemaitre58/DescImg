@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wextra -Wall -Wno-delete-non-virtual-dtor -Werror=return-type -g -O0 -DDEBUG -fprofile-arcs -ftest-coverage  -rdynamic CMakeFiles/main.dir/main.cpp.o  -o /home/cedric/Documents/Code/DescImg/bin/main ../common/libcommon.a -lpthread 
